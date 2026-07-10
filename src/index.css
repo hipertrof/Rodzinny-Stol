@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", "Lora", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  
+  --color-cream: #FBFBF9;
+  --color-espresso: #2D2A26;
+  --color-sage: #7B8C69;
+  --color-sage-light: #F2F4F0;
+  --color-sage-dark: #687758;
+  --color-polish-border: #E5E4E0;
+}
+
+/* Base resets or custom scrollbar and scroll behavior */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: var(--color-espresso);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: var(--font-serif);
+}
+
+.shadow-soft {
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.04);
+}
+
+/* Custom transitions and scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #E5E7EB;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D1D5DB;
+}
+
+/* Custom print media rules */
+@media print {
+  /* Set body styling to flow correctly on physical paper */
+  body, html {
+    background: white !important;
+    background-color: white !important;
+    color: black !important;
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  /* Hide everything inside the main app except the active printable recipe modal */
+  #root > div > *:not(.print-recipe-modal) {
+    display: none !important;
+  }
+
+  /* Ensure the printable recipe details occupies full width and flows naturally without clipping */
+  .print-recipe-modal {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    background: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+
+  /* Override inner modal styling to expand across pages */
+  .print-recipe-modal > div {
+    position: static !important;
+    box-shadow: none !important;
+    border: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+  }
+}
+

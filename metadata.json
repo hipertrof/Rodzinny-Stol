@@ -1,0 +1,6 @@
+{
+  "name": "Rodzinny Stół",
+  "description": "Prywatna, rodzinna książka kucharska o minimalistycznym i eleganckym charakterze, służąca do kolekcjonowania i edytowania ulubionych przepisów.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
